@@ -1,0 +1,1445 @@
+/* ===== ESTILOS BASE PARA LOS STEPS DEL FORMULARIO ===== */
+
+/* Reset básico para asegurar consistencia */
+* {
+  box-sizing: border-box;
+}
+
+/* Tarjeta del formulario */
+.formCard {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 459px;
+  height: auto;
+  overflow: visible;
+  z-index: 1002;
+}
+
+/* Grid del formulario - BASE: 4 COLUMNAS DESKTOP */
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 32px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.errorMessage {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+  font-weight: 500;
+}
+
+.radioGroupError {
+  border: 1px solid #e74c3c;
+  border-radius: 6px;
+  padding: 8px;
+  background-color: #fdf2f2;
+}
+
+.radioError {
+  accent-color: #e74c3c !important;
+}
+
+.radioError:checked {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+
+.sectionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+}
+
+.personaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 24px;
+  width: 100%;
+}
+
+/* Grupos de campos */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.formGroup.span1 {
+  grid-column: span 1;
+}
+
+.formGroup.span2 {
+  grid-column: span 2;
+}
+
+.formGroup.fullWidth,
+.formGroup.full-width {
+  grid-column: 1 / -1;
+}
+
+.formGroup label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+/* Inputs y selects */
+.formGrid input,
+.formGrid select,
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  height: 44px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  min-width: 0;
+  /* Importante para evitar overflow */
+}
+
+.formGrid input::placeholder,
+.input::placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.formGrid input:focus,
+.formGrid select:focus,
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.formGrid select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+/* Radio Groups */
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.radioGroup.span1 {
+  grid-column: span 1;
+}
+
+.radioGroup.span2 {
+  grid-column: span 2;
+}
+
+.radioGroup.fullWidth,
+.radioGroup.full-width {
+  grid-column: 1 / -1;
+}
+
+.radioGroupHorizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 0;
+  grid-column: 1 / -1;
+}
+
+.radioGroup>label:first-child,
+.radioGroupHorizontal>label:first-child {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.radioGroup div,
+.radioOptions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.radioGroup div label,
+.radioOptions label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  margin-bottom: 0;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.radioGroup input[type="radio"],
+.radioOptions input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Títulos */
+.sectionTitle {
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+  grid-column: 1 / -1;
+}
+
+.sectionSubtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+  grid-column: 1 / -1;
+  margin-top: 10px;
+}
+
+/* Secciones dinámicas */
+.dynamicSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.inputRow .input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Botones */
+.addButton {
+  background-color: #dbeafe;
+  border: 1px solid #60a5fa;
+  color: rgb(0, 0, 0);
+
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 100px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.addButton:hover {
+  background-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+.addButton:active {
+  transform: translateY(0);
+}
+
+.addButton:disabled {
+  background-color: #e5e7eb;
+
+  cursor: not-allowed;
+  transform: none;
+}
+
+.removeButton {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  /* 🔑 evita que crezca */
+}
+
+.removeButton:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+.removeButton:active {
+  transform: translateY(0);
+}
+
+
+/* Botones de navegación */
+.buttonGroup {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  gap: 16px;
+  width: 100%;
+}
+
+.submitButton,
+.previousButton {
+  background-color: #60a5fa;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 150px;
+  height: 44px;
+}
+
+.submitButton:hover,
+.previousButton:hover {
+  background-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled,
+.previousButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.previousButton {
+  background-color: #6b7280;
+}
+
+.previousButton:hover {
+  background-color: #4b5563;
+}
+
+/* Personas adicionales */
+.personaAdicional {
+  grid-column: 1 / -1;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+  background-color: #f9fafb;
+  width: 100%;
+}
+
+.personaTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d1d5db;
+}
+
+/* Cláusulas de texto */
+.clauseSection {
+  grid-column: 1 / -1;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.clauseTitle {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.clauseText {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  word-wrap: break-word;
+}
+
+/* Canvas de firma */
+.signatureCanvas {
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  width: 35%;
+  height: 120px;
+  background: #fff;
+  cursor: crosshair;
+}
+
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #4000f1;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.signatureActions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.signatureActions button {
+  background-color: #60a5fa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signatureActions button:hover {
+  background-color: #3b82f6;
+}
+
+/* Separadores */
+.separator {
+  grid-column: 1 / -1;
+  border: 0;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 20px 0;
+}
+
+.coberturas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  white-space: inherit;
+  width: 100%;
+}
+
+.coberturasLabel {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.coberturaRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-block: 4px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+}
+
+.valorInput {
+  width: 160px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.notice {
+  grid-column: 1 / -1;
+  background-color: #dbeafe;
+  border: 1px solid #60a5fa;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.section {
+  grid-column: 1 / -1;
+  margin-bottom: 24px;
+}
+
+/* ===== estilos específicos para la tabla de coberturas ===== */
+.coverageTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+.coverageTable thead {
+  background: #f3f4f6;
+}
+
+.coverageTable th,
+.coverageTable td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.colCoverage {
+  width: 70%;
+}
+
+.colValue {
+  width: 30%;
+}
+
+/* etiqueta con checkbox + texto */
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* entradas para montos */
+.amountInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+/* entrada pequeña para porcentaje */
+.smallInput {
+  width: 70px;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+/* fila con inputs en linea */
+.flexRow {
+  display: flex;
+  align-items: center;
+}
+
+/* nota pequeña debajo de la etiqueta */
+.subNote {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* radioOptions ya definido arriba; ajustar pequeños radios en línea */
+.radioOptions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+/* responsivo para la tabla */
+@media screen and (max-width: 900px) {
+
+  .coverageTable th,
+  .coverageTable td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+}
+
+/* ===== MEDIA QUERIES RESPONSIVE ===== */
+
+/* 4K y pantallas ultra grandes */
+@media screen and (min-width: 3201px) {
+  .formCard {
+    max-width: 1800px;
+    padding: 48px;
+  }
+
+  .formGrid {
+    gap: 24px 48px;
+  }
+
+  .formGrid input,
+  .formGrid select,
+  .input {
+    height: 52px;
+    font-size: 16px;
+    padding: 14px 16px;
+  }
+
+  .formGroup label {
+    font-size: 16px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+}
+
+/* Pantallas grandes (Desktop) */
+@media screen and (max-width: 3200px) and (min-width: 1200px) {
+  .formGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 40px;
+  }
+
+  .personaGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 32px;
+  }
+}
+
+/* Tablets horizontales y pantallas medianas */
+@media screen and (max-width: 1199px) and (min-width: 900px) {
+  .formGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 28px;
+  }
+
+  .personaGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 24px;
+  }
+
+  .formCard {
+    padding: 28px;
+  }
+
+  .span2 {
+    grid-column: span 2;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 899px) and (min-width: 700px) {
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 24px;
+  }
+
+  .personaGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 20px;
+  }
+
+  .formCard {
+    padding: 24px;
+    margin: 0 16px;
+  }
+
+  .span1,
+  .span2 {
+    grid-column: span 1;
+  }
+
+  .buttonGroup {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .submitButton,
+  .previousButton {
+    min-width: 140px;
+  }
+}
+
+/* Tablets pequeños y móviles grandes */
+@media screen and (max-width: 699px) and (min-width: 500px) {
+
+  .formGrid,
+  .personaGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .removeButton {
+    align-self: flex-end;
+    margin-top: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .formCard {
+    padding: 20px;
+    margin: 0 12px;
+    border-radius: 8px;
+  }
+
+  .span1,
+  .span2,
+  .fullWidth,
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .radioOptions {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .inputRow {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .removeButton {
+    align-self: flex-end;
+    margin-top: 8px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .submitButton,
+  .previousButton {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .signatureCanvas {
+    height: 160px;
+  }
+
+  .signatureActions {
+    justify-content: center;
+  }
+}
+
+/* Tablets pequeños y móviles grandes (continúa) */
+@media screen and (max-width: 499px) and (min-width: 380px) {
+
+  .formGrid,
+  .personaGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .formCard {
+    padding: 16px;
+    margin: 0 8px;
+    border-radius: 6px;
+  }
+
+  .formGrid input,
+  .formGrid select,
+  .input {
+    height: 42px;
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .formGroup label {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .removeButton {
+    align-self: flex-end;
+    margin-top: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .radioOptions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .radioGroup div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .addButton {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .inputRow {
+    gap: 10px;
+  }
+
+  .signatureCanvas {
+    height: 140px;
+  }
+
+  .clauseText {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .personaAdicional {
+    padding: 16px;
+    margin: 16px 0;
+  }
+
+  .personaTitle {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Móviles pequeños */
+@media screen and (max-width: 379px) {
+
+  .formGrid,
+  .personaGrid {
+    gap: 12px;
+  }
+
+  .formCard {
+    padding: 12px;
+    margin: 0 4px;
+  }
+
+  .formGrid input,
+  .formGrid select,
+  .input {
+    height: 40px;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .formGroup label {
+    font-size: 13px;
+  }
+
+  .sectionTitle {
+    font-size: 15px;
+  }
+
+  .radioOptions {
+    gap: 10px;
+  }
+
+  .removeButton {
+    align-self: flex-end;
+    margin-top: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .radioGroup div {
+    gap: 8px;
+  }
+
+  .addButton {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .removeButton {
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .submitButton,
+  .previousButton {
+    font-size: 13px;
+    padding: 10px 16px;
+    height: 40px;
+  }
+
+  .signatureCanvas {
+    height: 120px;
+  }
+
+  .clauseText {
+    font-size: 12px;
+  }
+
+  .personaAdicional {
+    padding: 12px;
+  }
+
+  .personaTitle {
+    font-size: 15px;
+  }
+}
+
+/* Ajustes para pantallas con poca altura */
+@media screen and (max-height: 700px) {
+  .formCard {
+    min-height: auto;
+  }
+
+  .buttonGroup {
+    margin-top: 20px;
+  }
+
+  .submitButton,
+  .previousButton {
+    padding: 8px 16px;
+    height: 36px;
+  }
+}
+
+/* Ajustes para landscape en móviles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .formCard {
+    padding: 12px;
+  }
+
+  .formGrid {
+    gap: 10px;
+  }
+
+  .signatureCanvas {
+    height: 100px;
+  }
+
+  .personaAdicional {
+    padding: 12px;
+    margin: 12px 0;
+  }
+}
+
+/* ===== Indicador de campos obligatorios (asterisco rojo) ===== */
+/* Agrega un asterisco rojo al label cuando hay un control requerido en el mismo grupo */
+.formGroup:has(input[required])>label::after,
+.formGroup:has(textarea[required])>label::after {
+  content: " *";
+  color: #e11d48;
+  /* rojo */
+}
+
+/* No mostrar asterisco cuando el requerido es un select */
+.formGroup:has(select[required])>label::after {
+  content: none;
+}
+
+/* Para grupos de radio: si alguno es requerido, marcar el título del grupo */
+.radioGroup:has(input[required])>label:first-child::after,
+.radioGroupHorizontal:has(input[required])>label:first-child::after {
+  content: " *";
+  color: #e11d48;
+}
+
+/* ===== Estilos globales para mensajes emergentes ===== */
+
+:global(.messageBackdrop) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(231, 229, 255, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+:global(.messageContainer) {
+  margin-top: 16px;
+  min-width: 280px;
+  max-width: 90vw;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  animation: slideDown 180ms ease-out;
+  border: 1px solid transparent;
+  background: #fff;
+}
+
+:global(.messageInfo) {
+  border-color: #90caf9;
+  background: #e3f2fd;
+}
+
+:global(.messageWarning) {
+  border-color: #ffecb3;
+  background: #fff8e1;
+}
+
+:global(.messageError) {
+  border-color: #ffcdd2;
+  background: #ffebee;
+}
+
+:global(.messageBody) {
+  margin: 0;
+}
+
+:global(.messageText) {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+:global(.messageContent) {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+:global(.messageIcon) {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  flex: 0 0 auto;
+}
+
+:global(.messageActions) {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+:global(.messageButton) {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+:global(.messageButton:hover) {
+  background: #145da0;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== Label con Tooltip ===== */
+.labelWithTooltip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+/* ===== Contenedor del icono ===== */
+.tooltipContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ===== Icono ℹ️ ===== */
+.infoIcon {
+  font-size: 14px;
+  line-height: 1;
+  color: #17bebc;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.infoIcon:hover {
+  transform: scale(1.15);
+}
+
+/* ===== Tooltip ===== */
+.tooltipText {
+  position: absolute;
+  bottom: 135%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  width: 260px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 30;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+/* Flecha del tooltip */
+.tooltipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+
+/* Mostrar tooltip */
+.tooltipContainer:hover .tooltipText {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 699px) {
+  .tooltipText {
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 40px);
+    max-width: 320px;
+    z-index: 1000;
+  }
+
+  .infoIcon {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .tooltipText {
+    font-size: 11px;
+    padding: 6px 10px;
+    bottom: 60px;
+  }
+
+  .infoIcon {
+    font-size: 15px;
+  }
+}
+
+
+/* ===== ESTILOS GLOBALES PARA CHOICES.JS ===== */
+/* Forzar altura máxima del dropdown para evitar scroll en la página */
+:global(.choices__list--dropdown) {
+  max-height: 150px !important;
+  overflow-y: auto !important;
+  z-index: 1000 !important;
+}
+
+:global(.choices[data-type*="select-one"] .choices__list--dropdown) {
+  max-height: 150px !important;
+}
+
+:global(.choices[data-type*="select-multiple"] .choices__list--dropdown) {
+  max-height: 150px !important;
+}
+
+.signatureContainer {
+  margin-top: 30px;
+}
+
+.signatureBox {
+  width: 100%;
+  max-width: 520px;
+}
+
+.signatureCanvas {
+  width: 100%;
+  height: 180px;
+  background: #fff;
+  cursor: crosshair;
+}
+
+.signatureActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.acceptButton {
+  background: #17bebb;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.acceptButton:hover {
+  background: #129c9a;
+}
+
+.signatureAccepted {
+  margin-top: 10px;
+  color: #17bebb;
+  font-weight: 600;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.signaturePreview {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* CRÍTICO */
+}
+
+.helperText {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgb(68, 68, 68);
+  font-style: italic;
+}
+
+.closeModalButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.coberturaItem {
+  margin-bottom: 16px;
+}
+
+.coberturaHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dynamicSection {
+  margin-left: 2px; /* sangría elegante debajo del checkbox */
+  margin-top: 8px;
+}
+
+
+.coberturaItem {
+  margin-bottom: 16px;
+}
+
+.coberturaHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dynamicSection {
+  margin-top: 10px;
+  padding-left: 4px;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 260px; /* 🔥 mismo tamaño siempre */
+}
+
+.input {
+  width: 100%;
+}
+
+.tooltipContainer {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+
+.tooltipText {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 260px;
+  background-color: #1f2937;
+  color: #fff;
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.tooltipContainer:hover .tooltipText {
+  display: block;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.addButton {
+  margin-top: 8px;
+}
+
+.errorBox {
+  margin-top: 8px;
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #991b1b;
+  font-size: 13px;
+}
+
+.inputRowGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Imagen de firma cargada desde archivo */
+.signatureImagePreview,
+.signaturePreview {
+  width: 300px;      /* mismo ancho que el canvas */
+  height: 100px;     /* mismo alto que el canvas */
+  object-fit: contain; /* mantiene proporción de la imagen */
+  border: 1px solid #ccc;
+}

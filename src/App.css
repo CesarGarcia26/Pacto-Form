@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #00a9e0;
+  --primary-hover: #008bbd;
+  --accent-color: #a8e3e4;
+  --bg-light: #f0fefc;
+  --text-dark: #0b0b3b;
+  --text-muted: #555;
+  --radius-lg: 15px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,214 @@
+/* ===== ESTILOS DEL CONTENEDOR PRINCIPAL ===== */
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: clamp(20px, 3vw, 40px);
+  padding-bottom: clamp(20px, 3vw, 40px);
+  overflow-x: hidden;
+}
+.pageCounter {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #020755;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* Link volver */
+.volver {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  align-self: flex-start;
+  justify-self: flex-start;
+  
+  margin-left: clamp(16px, 3vw, 32px);
+  padding: 8px 12px;
+  border: none;
+  background: #f8f9fa;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+
+/* Clase para hacer el botón invisible pero mantener su espacio */
+.volver.invisible {
+  visibility: hidden;
+}
+
+/* Título */
+.title {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: bold;
+  color: #0b0b3b;
+  margin-bottom: clamp(15px, 2vw, 20px);
+  align-self: flex-start;
+  margin-left: clamp(16px, 3vw, 32px);
+}
+
+/* Logo */
+.loginImage {
+  max-width: 213px;
+  position: absolute;
+  top: -47px;
+  right: clamp(10px, 2vw, 19px);
+  z-index: 1001;
+  max-height: 25240px;
+}
+
+/* Círculos decorativos */
+.circleTopRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(150px, 25vw, 300px);
+  height: clamp(150px, 25vw, 300px);
+  background-color: #a8e3e4;
+  border-bottom-left-radius: 100%;
+  z-index: 0;
+}
+
+.circleBottomLeft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(150px, 25vw, 300px);
+  height: clamp(150px, 25vw, 300px);
+  background-color: #a8e3e4;
+  border-top-right-radius: 100%;
+  z-index: 0;
+}
+
+/* ===== MEDIA QUERIES RESPONSIVE ===== */
+
+/* Pantallas grandes (tablets y laptops pequeños) */
+@media (max-width: 1200px) {
+  .formCard {
+    max-width: 900px;
+    height: auto;
+    max-height: none;
+  }
+}
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .formCard {
+    padding: 20px;
+    margin: 0 15px;
+    width: calc(100% - 30px);
+    height: auto;
+    max-height: none;
+  }
+
+  .loginImage {
+    max-width: 180px;
+    top: -35px;
+    right: 10px;
+  }
+
+  .circleTopRight {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .circleBottomLeft {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Pantallas pequeñas (móviles grandes) */
+@media (max-width: 600px) {
+  .formCard {
+    padding: 15px;
+    margin: 0 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .loginImage {
+    max-width: 140px;
+    top: -25px;
+    right: 8px;
+  }
+  
+  .circleTopRight {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .circleBottomLeft {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Pantallas muy pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+  .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .title {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+
+  .volver {
+    margin-left: 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .formCard {
+    padding: 12px;
+    margin: 0 8px;
+    width: calc(100% - 16px);
+  }
+  
+  .loginImage {
+    max-width: 120px;
+    top: -20px;
+    right: 5px;
+  }
+  
+  .circleTopRight {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .circleBottomLeft {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Pantallas con poca altura */
+@media (max-height: 700px) {
+  .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .formCard {
+    padding: 15px;
+    height: auto;
+    max-height: none;
+  }
+}
