@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/ubicacion"; 
+const API_URL = import.meta.env.VITE_API_URL;
 
 const loginService = async (username, password) => {
   try {

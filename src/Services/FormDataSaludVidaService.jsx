@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/ubicacion/guardar";
+const API_URL = import.meta.env.VITE_API_URL;
 
 // 🔐 Ya NO necesitamos useAuth porque el token está en la cookie
 export const useFormDataSaludVidaService = () => {

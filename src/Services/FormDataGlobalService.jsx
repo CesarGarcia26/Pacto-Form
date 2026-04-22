@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/ubicacion";
+const API_URL = import.meta.env.VITE_API_URL;
 
 // 🔐 Ya NO necesitamos el hook useAuth porque el token está en la cookie
 export const useFromDataGlobalService = () => {

@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useAuth } from "../Context/authContext";
 
-const API_URL = "http://localhost:8080/api/ubicacion";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const useCoberturasService = () => {
   const { userInfo } = useAuth();
