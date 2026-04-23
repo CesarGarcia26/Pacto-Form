@@ -2,7 +2,6 @@ import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-// 🔐 Ya NO necesitamos useAuth porque el token está en la cookie
 export const useFormDataSaludVidaService = () => {
   const sendFormDataSaludVida = async ({
     step1VData,
@@ -19,10 +18,7 @@ export const useFormDataSaludVidaService = () => {
     step12VData,
     step13VData,
   }) => {
-    // ❌ ELIMINADO: Validación del token
-    // if (!userInfo?.token) {
-    //   throw new Error("Usuario no autenticado. Inicie sesión para continuar.");
-    // }
+
 
     const cleanArray = (arr) => {
       if (!Array.isArray(arr)) return [];
@@ -218,7 +214,7 @@ export const useFormDataSaludVidaService = () => {
 
     try {
       // 🔐 CAMBIO CRÍTICO: withCredentials envía la cookie automáticamente
-      const response = await axios.post(API_URL, allStepsData, {
+      const response = await axios.post(`${API_URL}/guardar`, allStepsData, {
         headers: {
           "Content-Type": "application/json",
           // ❌ ELIMINADO: Authorization: `Bearer ${userInfo.token}`
