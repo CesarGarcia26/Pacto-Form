@@ -219,7 +219,7 @@ export const useFormDataSaludVidaService = () => {
           "Content-Type": "application/json",
           // ❌ ELIMINADO: Authorization: `Bearer ${userInfo.token}`
         },
-        withCredentials: true, // ← OBLIGATORIO para enviar cookies
+        
       });
 
       return response.data;
