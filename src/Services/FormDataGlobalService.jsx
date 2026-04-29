@@ -133,19 +133,19 @@ export const useFromDataGlobalService = () => {
 
     try {
       // 🔐 CAMBIO CRÍTICO: withCredentials envía la cookie automáticamente
-      const response = await axios.post(API_URL, formDataComplete, {
+      const response = await axios.post(`${API_URL}/guardar`, allStepsData, {
         headers: {
           "Content-Type": "application/json",
           // ❌ ELIMINADO: Authorization: `Bearer ${userInfo.token}`
-          // El token ahora se envía automáticamente en la cookie httpOnly
         },
-        withCredentials: true, // ← OBLIGATORIO para enviar cookies
+        
       });
 
       return response.data;
     } catch (error) {
-      console.error("Error al enviar formulario:", error);
+      console.error("Error:", error.message);
       if (error.response) {
+        console.error("Status:", error.response.status);
         console.error("Datos del error:", error.response.data);
       }
       throw error;
