@@ -143,11 +143,8 @@ export const useFromDataGlobalService = () => {
 
     try {
       // 🔐 CAMBIO CRÍTICO: withCredentials envía la cookie automáticamente
-      const response = await axios.post(`${API_URL}/guardar`, formDataComplete, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true, // 🔐 importante para cookies
+      const response = await axios.post(`${API_URL}/guardar-colectiva`, formDataComplete, {
+        headers: { "Content-Type": "application/json" },
       });
 
       return response.data;
