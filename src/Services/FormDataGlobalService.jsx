@@ -46,6 +46,13 @@ export const useFromDataGlobalService = () => {
       });
     };
 
+    const cleanValue = (value) => {
+      if (value === null || value === undefined) return "";
+      if (typeof value === "string" && value.toUpperCase() === "N/A") return "";
+      return value;
+    };
+
+
     // Unificamos todos los pasos
     const formDataComplete = {
       // STEP 1
@@ -60,7 +67,10 @@ export const useFromDataGlobalService = () => {
       telefono: step1Data?.telefono || "",
       direccion: step1Data?.direccion || "",
       tipoDireccion: step1Data?.tipoDireccion || "",
-      fechaNacimiento: step1Data?.fechaNacimiento || "",
+
+      // 🔥 AQUÍ EL FIX
+      fechaNacimiento: cleanValue(step1Data?.fechaNacimiento),
+
       plan: step1Data?.plan || "",
       urgencias: step1Data?.urgencias || "",
       consulta: step1Data?.consulta || "",
@@ -71,7 +81,7 @@ export const useFromDataGlobalService = () => {
       numeroIdentificacionPrincipal: step2Data?.numeroIdentificacionPrincipal || "",
       nombresApellidosPrincipal: step2Data?.nombresApellidosPrincipal || "",
       parentescoPrincipal: step2Data?.parentescoPrincipal || "",
-      fechaNacimientoPrincipal: step2Data?.fechaNacimientoPrincipal || "",
+      fechaNacimientoPrincipal: cleanValue(step2Data?.fechaNacimientoPrincipal),
       sexoPrincipal: step2Data?.sexoPrincipal || "",
       estadoCivilPrincipal: step2Data?.estadoCivilPrincipal || "",
       pesoKgPrincipal: step2Data?.pesoKgPrincipal || "",
@@ -133,12 +143,11 @@ export const useFromDataGlobalService = () => {
 
     try {
       // 🔐 CAMBIO CRÍTICO: withCredentials envía la cookie automáticamente
-      const response = await axios.post(`${API_URL}/guardar`, allStepsData, {
+      const response = await axios.post(`${API_URL}/guardar`, formDataComplete, {
         headers: {
           "Content-Type": "application/json",
-          // ❌ ELIMINADO: Authorization: `Bearer ${userInfo.token}`
         },
-        
+        withCredentials: true, // 🔐 importante para cookies
       });
 
       return response.data;
