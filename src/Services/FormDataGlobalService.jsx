@@ -143,8 +143,12 @@ export const useFromDataGlobalService = () => {
 
     try {
       // 🔐 CAMBIO CRÍTICO: withCredentials envía la cookie automáticamente
-      const response = await axios.post(`${API_URL}/guardar-colectiva`, formDataComplete, {
-        headers: { "Content-Type": "application/json" },
+      const response = await axios.post(`${API_URL}/guardar-colectiva`, allStepsData, {
+        headers: {
+          "Content-Type": "application/json",
+          // ❌ ELIMINADO: Authorization: `Bearer ${userInfo.token}`
+        },
+        
       });
 
       return response.data;
